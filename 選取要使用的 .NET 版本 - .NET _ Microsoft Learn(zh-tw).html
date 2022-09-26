@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<!-- saved from url=(0113)https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light mathjax-complete" lang="zh-tw" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="選取要使用的 .NET 版本 - .NET">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection">
+			<meta property="og:description" content="瞭解 .NET 如何自動尋找並選擇您程式的執行階段版本。 此外，本文還會教導您如何強制使用特定版本。">
+
+	<meta property="og:image" content="https://learn.microsoft.com/dotnet/media/dotnet-logo.png">
+
+	<meta property="og:image:alt" content="選取要使用的 .NET 版本 - .NET | Microsoft Learn">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="@docsmsft">
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="apiPlatform" content="dotnet">
+<meta name="author" content="adegeo">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="description" content="瞭解 .NET 如何自動尋找並選擇您程式的執行階段版本。 此外，本文還會教導您如何強制使用特定版本。">
+<meta name="document_id" content="ab345482-5752-6845-feee-52f0f06c620c">
+<meta name="document_version_independent_id" content="3613d4c0-be8e-c5a4-42f4-bec78ab99c75">
+<meta name="gitcommit" content="https://github.com/dotnet/docs/blob/1b9a1ea5d13cdc8ea6c4ecfa45bbf7bcfd091a43/docs/core/versions/selection.md">
+<meta name="loc_file_id" content="Github-35890081.live.VS.core-docs.docs/core/versions/selection.md">
+<meta name="loc_source_id" content="Github-35890081#live">
+<meta name="loc_version" content="2022-01-24T02:16:38.8677428Z">
+<meta name="locale" content="zh-tw">
+<meta name="ms.author" content="adegeo">
+<meta name="ms.contentlocale" content="zh-tw">
+<meta name="ms.date" content="07/08/2021">
+<meta name="ms.devlang" content="dotnet">
+<meta name="ms.prod" content="dotnet-fundamentals">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.translationtype" content="MT">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs/blob/live/docs/core/versions/selection.md">
+<meta name="page_type" content="conceptual">
+<meta name="recommendations" content="true">
+<meta name="schema" content="Conceptual">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="show_latex" content="true">
+<meta name="site_name" content="Docs">
+<meta name="toc_rel" content="../../fundamentals/toc.json">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="updated_at" content="2022-09-22 09:42 AM">
+<meta name="word_count" content="2700">
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf" data-source="generated">
+
+	
+
+	<meta name="scope" content=".NET">
+	<meta name="github_feedback_content_git_url" content="https://github.com/dotnet/docs/blob/main/docs/core/versions/selection.md">
+<link href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection" rel="canonical">
+	<title>選取要使用的 .NET 版本 - .NET | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/16ade738.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-tw',
+			contentDir: 'ltr',
+			userLocale: 'zh-tw',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "adegeo", url: "https://github.com/adegeo" },
+						{ name: "IEvangelist", url: "https://github.com/IEvangelist" },
+						{ name: "gewarren", url: "https://github.com/gewarren" },
+						{ name: "ChristianHaefner", url: "https://github.com/ChristianHaefner" },
+						{ name: "robertmuehsig", url: "https://github.com/robertmuehsig" },
+						{ name: "Thraka", url: "https://github.com/Thraka" },
+						{ name: "mairaw", url: "https://github.com/mairaw" },
+						{ name: "KathleenDollard", url: "https://github.com/KathleenDollard" },
+						{ name: "nschonni", url: "https://github.com/nschonni" },
+						{ name: "scottaddie", url: "https://github.com/scottaddie" },
+						{ name: "Rick-Anderson", url: "https://github.com/Rick-Anderson" },
+						{ name: "BillWagner", url: "https://github.com/BillWagner" },
+						{ name: "pkulikov", url: "https://github.com/pkulikov" }
+],
+			mathjax: {
+			},
+		},
+		functions:{}
+	};
+	</script>
+	<script src="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/wcp-consent.js.下載"></script>
+	<script src="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/ms.jsll-3.min.js.下載"></script>
+
+	<script src="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/67a45209.deprecation.js.下載"></script>
+		<script src="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/672fb29e.index-docs.js.下載"></script><style></style>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Learn","position":1,"@type":"ListItem","item":"https://learn.microsoft.com/zh-tw/"},{"name":".NET","position":2,"@type":"ListItem","item":"https://learn.microsoft.com/zh-tw/dotnet/"},{"name":".NET 基本概念","position":3,"@type":"ListItem","item":"https://learn.microsoft.com/zh-tw/dotnet/fundamentals/"}]}</script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body lang="zh-tw" dir="ltr"><div id="MathJax_Message" style="display: none;"></div>
+	<div class="header-holder has-default-focus">
+		<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳到主要內容</a>
+
+		<div hidden="" id="cookie-consent-holder"></div><div id="banner-holder" class="has-default-focus has-overflow-hidden theme-light"><!----><section data-bi-name="tier1-event-banner" data-dismissable="disappearing" class="tier1-event-banner position-relative padding-top-md padding-bottom-md ignite-banner">
+		<div class="uhf-container display-flex-tablet align-items-center">
+			<div class="has-backdrop-filter-blur margin-right-xxl-tablet">
+				<h2 class="title is-2 margin-bottom-xs"><!---->Microsoft Ignite<!----></h2>
+				<p class="font-size-sm"><!---->2022 年 10 月 12 日到 14日<!----></p>
+			</div>
+			<p class="container is-max-mobile display-none display-block-widescreen has-backdrop-filter-blur font-size-sm margin-left-none margin-right-xxl">
+				在 10 月 12 日到 14 日加入我們，向產品專家學習並深入了解技術培訓和研討會，以提升您的技能。
+			</p>
+			<a data-bi-name="CTA" class="button margin-block-sm button-filled button-primary" href="https://ignite.microsoft.com/home?wt.mc_ID=ignite2022_esc_corp_soc_oo_notsocial_DOCS_DOCSBannerReg1">
+				<span><!---->立即報名<!----></span>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</a>
+		</div>
+		<button type="button" data-dismiss="" data-bi-name="close" class="button delete delete-lg position-absolute top-0 right-0 margin-xs margin-sm-tablet button-filled button-primary">
+			<span class="visually-hidden"><!---->關閉警示<!----></span>
+		</button>
+	</section><!----></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">已不再支援此瀏覽器。</p>
+				<p style="font-size: 16px; margin-top: 16px;">請升級至 Microsoft Edge，以利用最新功能、安全性更新和技術支援。</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下載 Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+Internet Explorer 和 Microsoft Edge 的詳細資訊					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!----> <div class="nav-bar-brand display-flex align-items-center padding-none margin-left-xs margin-left-none-tablet">
+		
+					<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+						 <div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				
+		<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+			<g data-name="MS-symbol">
+				<clippath>
+					<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+				</clippath>
+				<g clip-path="url(#a)">
+					<path d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z" class="fill-current-color color-text-subtle"></path>
+					<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+					<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+					<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+					<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+				</g>
+			</g>
+		</svg>
+	
+		  </div>
+					</a>
+			  
+	</div> 
+				
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="全域導覽" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->文件<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->全域導覽<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+				
+		<nav class="nav-bar-nav" role="navigation" aria-label="全球">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://learn.microsoft.com/zh-tw/">
+				<span><!---->Learn<!----></span>
+			</a>
+		</li>
+	
+				<!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline is-active" href="https://learn.microsoft.com/zh-tw/docs/">
+						<span><!---->文件<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/training/">
+						<span><!---->訓練<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/certifications/">
+						<span><!---->認證<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/answers/products/">
+						<span><!---->Q&amp;A<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/samples/browse/">
+						<span><!---->程式碼範例<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/shows/">
+						<span><!---->節目<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/zh-tw/events/">
+						<span><!---->事件<!----></span>
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-111">
+			<span><!---->其他<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-111" aria-label="其他">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button is-active" href="https://learn.microsoft.com/zh-tw/docs/">
+						文件
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/training/">
+						訓練
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/certifications/">
+						認證
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/answers/products/">
+						Q&amp;A
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/samples/browse/">
+						程式碼範例
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/shows/">
+						節目
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/zh-tw/events/">
+						事件
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+				<span class="nav-bar-spacer"></span>
+				
+		<div class="nav-bar-search " id="ax-112" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form" aria-label="搜尋" action="https://learn.microsoft.com/zh-tw/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input input-sm
+						
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-113-listbox" aria-controls="ax-113-listbox" aria-activedescendant="" aria-label="搜尋" placeholder="搜尋" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-113-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="site-search-input-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form-desktop" aria-label="搜尋" action="https://learn.microsoft.com/zh-tw/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-114" class="autocomplete-input input input-sm
+						control has-icons-left
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-115-listbox" aria-controls="ax-115-listbox" aria-activedescendant="" aria-label="搜尋" placeholder="搜尋" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-115-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-114-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="搜尋" aria-expanded="false" aria-controls="ax-112">
+					
+		<span class="is-visually-hidden-mobile"><!---->搜尋<!----></span>
+		<span class="icon margin-left-xxs" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+				
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#"> 登入 </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="您的帳戶">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium border-radius-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box justify-content-flex-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium border-radius-rounded" aria-labelledby="displayName" alt="" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<h2 class="title font-size-lg">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</h2>
+						<p class="subtitle font-size-sm margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="padding-top-xs padding-bottom-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" href="https://learn.microsoft.com/zh-tw/users/me/activity/"><!---->設定檔<!----></a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" href="https://learn.microsoft.com/zh-tw/users/me/settings/"><!---->設定<!----></a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#"><!---->登出<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+			 <!----></div> <div class="nav-bar border-top is-hidden-mobile"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://learn.microsoft.com/dotnet/">
+			<span>
+				.NET
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="網站">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-116">
+			<span><!---->語言<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-116" aria-label="語言">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/csharp/">
+						C#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/fsharp/">
+						F#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/visual-basic/">
+						Visual Basic
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-117">
+			<span><!---->工作負載<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-117" aria-label="工作負載">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/aspnet/core/?view=aspnetcore-6.0">
+						Web
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/xamarin/">
+						行動
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/azure/">
+						雲端
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-118">
+			<span><!---->桌面<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-118" aria-label="桌面">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/desktop/wpf/?view=netdesktop-6.0">
+						Windows Presentation Foundation
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/desktop/winforms/?view=netdesktop-6.0">
+						Windows Forms
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/windows/uwp/">
+						通用 Windows 應用程式
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/xamarin/mac/">
+						適用於 macOS 的 Xamarin
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-119">
+			<span><!---->機器學習與資料<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-119" aria-label="機器學習與資料">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/machine-learning/">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/spark/">
+						適用於 Apache Spark 的 .NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/ef/">
+						Entity Framework
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-120">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-120" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=net-6.0">
+						.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=netframework-4.8&amp;preserve-view=true">
+						.NET Framework
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=aspnetcore-6.0">
+						ASP.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=ml-dotnet&amp;preserve-view=true">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-121">
+			<span><!---->資源<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-121" aria-label="資源">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet">
+						什麼是 .NET？
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides">
+						.NET 架構指南
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn">
+						學習教材
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download">
+						下載
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community">
+						社群
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support">
+						支援
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/">
+						部落格
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-122">
+			<span><!---->其他<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-122" aria-label="其他">
+			<!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-123">
+			<span><!---->語言<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-123" aria-label="語言">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/csharp/">
+						C#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/fsharp/">
+						F#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/visual-basic/">
+						Visual Basic
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-124">
+			<span><!---->工作負載<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-124" aria-label="工作負載">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/aspnet/core/?view=aspnetcore-6.0">
+						Web
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/xamarin/">
+						行動
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/azure/">
+						雲端
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-125">
+			<span><!---->桌面<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-125" aria-label="桌面">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/desktop/wpf/?view=netdesktop-6.0">
+						Windows Presentation Foundation
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/desktop/winforms/?view=netdesktop-6.0">
+						Windows Forms
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/windows/uwp/">
+						通用 Windows 應用程式
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/xamarin/mac/">
+						適用於 macOS 的 Xamarin
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-126">
+			<span><!---->機器學習與資料<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-126" aria-label="機器學習與資料">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/machine-learning/">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/spark/">
+						適用於 Apache Spark 的 .NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/ef/">
+						Entity Framework
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-127">
+			<span><!---->API<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-127" aria-label="API">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=net-6.0">
+						.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=netframework-4.8&amp;preserve-view=true">
+						.NET Framework
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=aspnetcore-6.0">
+						ASP.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/zh-tw/dotnet/api/?view=ml-dotnet&amp;preserve-view=true">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-128">
+			<span><!---->資源<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-128" aria-label="資源">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet">
+						什麼是 .NET？
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides">
+						.NET 架構指南
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn">
+						學習教材
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download">
+						下載
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community">
+						社群
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support">
+						支援
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/">
+						部落格
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		
+		<ol class="nav-bar-list">
+			 
+		<li class="nav-bar-item ">
+			<a class="button button-sm button-primary button-filled" href="https://dotnet.microsoft.com/download">
+				下載 .NET
+			</a>
+		</li>
+	
+		</ol>
+	 
+	 <!----></div> <!----></header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目錄						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>結束焦點模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"><!---->
+			<section data-dismissable="disappearing" data-bi-name="banner" class="is-info alert is-banner">
+				<div class="uhf-container">
+					<button data-dismiss="" data-bi-name="close" type="button" class="delete position-absolute top-0 right-0 margin-xxs delete-lg">
+						<span class="visually-hidden"><!---->關閉警示<!----></span>
+					</button>
+					<div class="columns">
+						<div class="column is-12">
+							<div class="level justify-content-flex-start">
+								<div class="level-left flex-shrink-1">
+									<div class="level-item flex-shrink-1">
+										<p class="has-text-white-static disclaimer-title margin-top-xxs margin-right-xs has-line-height-reset">
+											<span class="icon">
+												<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+											</span>
+											<span><!---->本主題有部分內容為機器翻譯。<!----></span>
+										</p>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		<!----></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要" style="width: 336.2px; top: 290.8px; bottom: 24px;" data-bi-name="left toc"><form action="javascript:" role="search" aria-label="搜尋" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-129">搜尋</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-129" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" type="text" aria-expanded="false" aria-owns="ax-130-listbox" aria-controls="ax-130-listbox" aria-activedescendant="" placeholder="依標題篩選" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-130-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-129-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="目錄" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/fundamentals/">.NET 文件</a></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>開始使用</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>概觀</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>.NET 的新功能</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>工具與診斷</span></li><li class="tree-item is-expanded" aria-setsize="16" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>執行模型</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/standard/clr">Common Language Runtime (CLR)</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/standard/managed-execution-process">受控執行程序</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/standard/assembly/">.NET 中的組件</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/standard/metadata-and-self-describing-components">中繼資料與自我描述元件</a></li><li class="tree-item" aria-setsize="8" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-6-1_5-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>相依性載入</span></li><li class="tree-item is-expanded" aria-setsize="8" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1_6-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>版本控制</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/">概觀</a></li><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection" aria-current="page">.NET 版本選取</a></li></ul></li><li class="tree-item" aria-setsize="8" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" id="title-6-1_7-2" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>設定 .NET 執行時間</span></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/core/runtime-discovery/troubleshoot-app-launch">針對應用程式啟動失敗進行疑難排解</a></li></ul></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>部署模型</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" id="title-8-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>DevOps</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>基礎程式碼元件</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" id="title-10-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>執行階段程式庫</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" id="title-11-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>資料存取</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" id="title-12-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>平行處理、並行與非同步</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" id="title-13-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>測試</span></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/zh-tw/dotnet/standard/security/">安全性</a></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="15" role="treeitem" tabindex="-1" id="title-15-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>進階主題</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="16" role="treeitem" tabindex="-1" id="title-16-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>移轉指南</span></li></ul></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-tw" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有階層連結">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-tw/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-tw/dotnet/">
+										.NET
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/zh-tw/dotnet/fundamentals/">
+										.NET 基本概念
+									</a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-tw/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/zh-tw/dotnet/"><!---->.NET<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/zh-tw/dotnet/fundamentals/" style=""><!---->.NET 基本概念<!----></a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs>
+
+									<div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="閱讀英文" data-bi-name="language-toggle" data-read-in-link="" href="https://learn.microsoft.com/en-us/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">閱讀英文</span>
+										</a>
+
+											<button type="button" class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-list-type="collection" data-bi-name="collection" title="將 選取要使用的 .NET 版本 - .NET | Microsoft Learn 新增至集合" data-pressed="false">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">儲存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多動作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" aria-label="目錄" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目錄</span>
+													</button>
+
+												<a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="閱讀英文" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" href="https://learn.microsoft.com/en-us/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">閱讀英文</span>
+												</a>
+
+													<button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="collection" data-bi-name="collection" title="將 選取要使用的 .NET 版本 - .NET | Microsoft Learn 新增至集合" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">儲存</span>
+													</button>
+
+
+
+
+													<button class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus" title="Print" type="button" aria-label="Print" data-bi-name="print" data-page-action-item="overflow-all" data-popover-close="" data-print-page="" data-check-hidden="true" hidden="">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fzh-tw%2Fdotnet%2Fcore%2Fversions%2Fselection%3FWT.mc_id%3Dtwitter&amp;text=%E9%81%B8%E5%8F%96%E8%A6%81%E4%BD%BF%E7%94%A8%E7%9A%84%20.NET%20%E7%89%88%E6%9C%AC%20-%20.NET%20%7C%20Microsoft%20Learn&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fzh-tw%2Fdotnet%2Fcore%2Fversions%2Fselection%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Flearn.microsoft.com%2Fzh-tw%2Fdotnet%2Fcore%2Fversions%2Fselection%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fzh-tw%2Fdotnet%2Fcore%2Fversions%2Fselection%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5B%E5%88%86%E4%BA%AB%E7%9A%84%E6%96%87%E7%AB%A0%5D%20%E9%81%B8%E5%8F%96%E8%A6%81%E4%BD%BF%E7%94%A8%E7%9A%84%20.NET%20%E7%89%88%E6%9C%AC%20-%20.NET%20%7C%20Microsoft%20Learn&amp;body=%E9%81%B8%E5%8F%96%E8%A6%81%E4%BD%BF%E7%94%A8%E7%9A%84%20.NET%20%E7%89%88%E6%9C%AC%20-%20.NET%20%7C%20Microsoft%20Learn%0A%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fzh-tw%2Fdotnet%2Fcore%2Fversions%2Fselection%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>電子郵件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目錄" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目錄</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="select-the-net-version-to-use">選取要使用的 .NET 版本</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-tw" dir="ltr">
+												<li>
+發行項												</li>
+												<li>
+													<time class="" data-article-date="" aria-label="文章檢閱日期" datetime="2022-09-22T09:42:00.000Z" data-article-date-source="git">2022/09/22</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="檢視所有參與者" class="contributors-button link-button" data-bi-name="contributors" title="檢視所有參與者">
+																13 位參與者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived="">
+	<button class="thumb-rating-button like link-button margin-xxs margin-right-none" data-binary-rating-response="rating-yes" title="本文很有幫助" type="button" data-bi-name="rating-yes" data-bi-sat="1">
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button class="thumb-rating-button dislike link-button margin-xxs margin-right-none" data-binary-rating-response="rating-no" title="本文沒有幫助" type="button" data-bi-name="rating-no" data-bi-sat="0">
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大綱"><!---->
+		<h3><!---->本文內容<!----></h3>
+		<ol>
+			<!---->
+					<li>
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version"><!---->SDK 使用最新安裝的版本<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis"><!---->目標 Framework Moniker 定義建置時間 API<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#framework-dependent-apps-roll-forward"><!---->與 Framework 相依的應用程式向前復原<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#self-contained-deployments-include-the-selected-runtime"><!---->獨立部署包含選取的執行階段<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#see-also"><!---->另請參閱<!----></a>
+					</li>
+				<!---->
+		</ol>
+	<!----></nav>
+
+								<!-- <content> -->
+									<p>本文說明用來選取版本的 .NET 工具、SDK 和執行時間所使用的原則。 這些原則在執行使用指定版本的應用程式，以及輕鬆升級開發人員和終端使用者電腦之間提供平衡。 這些原則會啟用：</p>
+<ul>
+<li>簡單且有效率的 .NET 部署，包括安全性和可靠性更新。</li>
+<li>使用最新的工具和命令，且不受目標執行階段影響。</li>
+</ul>
+<p>版本選取發生於下列情況：</p>
+<ul>
+<li>當您執行 SDK 命令時，<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" data-linktype="self-bookmark">SDK 使用最新安裝的版本</a>。</li>
+<li>當您繫結組件時，<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" data-linktype="self-bookmark">目標 Framework Moniker 定義建置時間 API</a>。</li>
+<li>當您執行 .NET 應用程式時，會 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#framework-dependent-apps-roll-forward" data-linktype="self-bookmark">向前復原目標 framework 相依的應用程式</a>。</li>
+<li>當您發佈獨立應用程式時，<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#self-contained-deployments-include-the-selected-runtime" data-linktype="self-bookmark">獨立部署包含選取的執行階段</a>。</li>
+</ul>
+<p>本文件的其餘部分會說明這四個案例。</p>
+<h2 id="the-sdk-uses-the-latest-installed-version" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version" aria-labelledby="the-sdk-uses-the-latest-installed-version"></a>SDK 使用最新安裝的版本</h2>
+<p>SDK 命令包含 <code>dotnet new</code> 和 <code>dotnet run</code>。 .NET CLI 必須為每個 <code>dotnet</code> 命令選擇 SDK 版本。 根據預設，它會使用電腦上最新安裝的 SDK，即使：</p>
+<ul>
+<li>專案的目標是舊版的 .NET 執行時間。</li>
+<li>.NET SDK 的最新版本是預覽版本。</li>
+</ul>
+<p>您可以利用最新的 SDK 功能和增強功能，同時以較早的 .NET 執行階段版本為目標。 您可以使用相同的 SDK 工具，以不同的 .NET 執行階段版本為目標。</p>
+<p>在罕見的情況下，您可能需要使用舊版的 SDK。 您可以在 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json" data-linktype="relative-path"><em>global.json</em> 檔案</a>中指定該版本。 「使用最新的」原則表示您只會使用 <em>global.asax</em> 來指定比最新安裝版本更早的 .net SDK 版本。</p>
+<p><em>global.json</em> 可能放在檔案階層中的任何地方。 CLI 會從專案目錄向上搜尋，以找到第一個 <em>global.json</em>。 您可以根據指定的 <em>global.json</em> 在檔案系統中的位置，來控制其所套用的專案。 .NET CLI 會從目前的工作目錄向上反覆巡覽路徑，以搜尋 <em>global.json</em> 檔案。 第一個找到的 <em>global.json</em> 檔案指定所使用的版本。 如果已安裝該 SDK 版本，則會使用該版本。 如果找不到在 <em>global. json</em> 中指定的 sdk，則 .net CLI 會使用比對 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json#matching-rules" data-linktype="relative-path">規則</a> 來選取相容的 sdk，如果找不到，則會失敗。</p>
+<p>下列範例示範 <em>global.json</em> 語法：</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">JSON</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-json" data-author-content="{
+  &quot;sdk&quot;: {
+    &quot;version&quot;: &quot;5.0.0&quot;
+  }
+}
+"><span>{
+  <span class="hljs-attr">"sdk"</span>: {
+    <span class="hljs-attr">"version"</span>: <span class="hljs-string">"5.0.0"</span>
+  }
+}
+</span></code></pre>
+<p>選取 SDK 版本的過程如下：</p>
+<ol>
+<li><code>dotnet</code> 會從目前的工作目錄向上反覆反向巡覽路徑，以搜尋 <code>dotnet</code> 檔案。</li>
+<li><code>dotnet</code> 使用第一個找到的 <code>dotnet</code> 中指定的 SDK。</li>
+<li>如果找不到 <code>dotnet</code>，<code>dotnet</code> 會使用最新安裝的 SDK。</li>
+</ol>
+<p>如需 SDK 版本選取的詳細資訊，請參閱<a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json" data-linktype="relative-path">global.asax 總覽</a>文章中的比對<a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json#matching-rules" data-linktype="relative-path">規則</a>和<a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json#rollforward" data-linktype="relative-path">向前復原</a>章節。</p>
+<h2 id="target-framework-monikers-define-build-time-apis" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" aria-labelledby="target-framework-monikers-define-build-time-apis"></a>目標 Framework Moniker 定義建置時間 API</h2>
+<p>您可以針對<strong>目標 Framework Moniker</strong> (TFM) 中定義的 API 建置專案。 您會在專案檔中指定<a href="https://learn.microsoft.com/zh-tw/dotnet/standard/frameworks" data-linktype="relative-path">目標 Framework</a>。 在您的專案檔中設定 <code>TargetFramework</code> 項目，如下列範例所示：</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">TargetFramework</span>&gt;</span>net5.0<span class="hljs-tag">&lt;/<span class="hljs-name">TargetFramework</span>&gt;</span>
+</span></code></pre>
+<p>您可以針對多個 TFM 建置專案。 設定多個目標 Framework 對程式庫較常見，但也可透過應用程式完成。 您會指定 <code>TargetFrameworks</code> 屬性 (<code>TargetFramework</code> 的複數形式)。 目標 Framework 是以分號分隔，如下列範例所示：</p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;TargetFrameworks&gt;net5.0;netcoreapp3.1;net47&lt;/TargetFrameworks&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">TargetFrameworks</span>&gt;</span>net5.0;netcoreapp3.1;net47<span class="hljs-tag">&lt;/<span class="hljs-name">TargetFrameworks</span>&gt;</span>
+</span></code></pre>
+<p>指定的 SDK 支援一組固定的架構，限制為其隨附執行階段的目標 Framework。 例如，.NET 5 SDK 包含 .NET 5 執行時間，這是目標 framework 的實 <code>net5.0</code> 作為目標。 .Net 5 SDK 支援、 <code>netcoreapp2.1</code> 、 <code>netcoreapp3.0</code> 等，但不 <code>net6.0</code> 支援 <code>netcoreapp2.0</code> (或更高的) 。 您要安裝 .NET 6 SDK 以建立 <code>net6.0</code> 。</p>
+<h3 id="net-standard" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#net-standard" aria-labelledby="net-standard"></a>.NET Standard</h3>
+<p>.NET Standard 是一種將 API 介面設為目標的方式，該介面是由不同的 .NET 執行所共用。 從 .NET 5 版本（即 API 標準本身）開始，.NET Standard 沒有關聯性，但有一個案例除外：當您想要以 .NET 和 .NET Framework 為目標時，.NET Standard 會很有用。 .NET 5 會執行所有的 .NET Standard 版本。</p>
+<p>如需詳細資訊，請參閱 <a href="https://learn.microsoft.com/zh-tw/dotnet/standard/net-standard#net-5-and-net-standard" data-linktype="relative-path">.net 5 及 .NET Standard</a>。</p>
+<h2 id="framework-dependent-apps-roll-forward" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#framework-dependent-apps-roll-forward" aria-labelledby="framework-dependent-apps-roll-forward"></a>與 Framework 相依的應用程式向前復原</h2>
+<p>當您使用 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-run" data-linktype="relative-path"><code>dotnet run</code></a> 從來源執行應用程式、使用 <strong></strong> 從<a href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-run" data-linktype="relative-path"><code>dotnet run</code></a>執行應用程式，或使用 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/deploying/#publish-framework-dependent" data-linktype="relative-path"></a> 從<a href="https://learn.microsoft.com/zh-tw/dotnet/core/deploying/#publish-framework-dependent" data-linktype="relative-path"><strong>架構相依可執行檔</strong></a>執行應用程式時，<strong></strong> 可執行檔會是該應用程式的<strong>主機</strong>。</p>
+<p>該主機會選擇電腦上最新安裝的修補程式版本。 例如，如果您在專案檔中指定 <code>net5.0</code>，且 <code>5.0.2</code> 是最新安裝的 .NET 執行階段，則會使用 <code>5.0.2</code> 執行階段。</p>
+<p>如果找不到可接受的 <code>5.0.*</code> 版本，則會使用新的 <code>5.*</code> 版本。 例如，如果您指定 <code>net5.0</code> 並只安裝 <code>5.1.0</code>，應用程式會使用 <code>5.1.0</code> 執行階段來執行。 這種行為稱為「次要版本向前復原」。也不會考慮較低的版本。 若未安裝可接受的執行階段，應用程式將不會執行。</p>
+<p>如果您將目標設為5.0，則有幾個使用範例會示範行為：</p>
+<ul>
+<li>指定了✔️5.0。 5.0.3 是已安裝的最高修補程式版本。 使用5.0.3。</li>
+<li>❌ 指定5.0。 未安裝 5.0. * 版本。 3.1.1 是已安裝的最高執行時間。 顯示錯誤訊息。</li>
+<li>指定了✔️5.0。 未安裝 5.0. * 版本。 5.1.0 是安裝的最高執行階段版本。 使用5.1.0。</li>
+<li>❌ 指定3.0。 未安裝3.x 版。 5.0.0 是安裝的最高執行時間。 顯示錯誤訊息。</li>
+</ul>
+<p>次要版本向前復原有一個可能會影響終端使用者的副作用。 請考慮下列案例：</p>
+<ol>
+<li>應用程式會指定需要5.0。</li>
+<li>但是，在執行時，不會安裝 5.0. * 版，但5.1.0 是。 將會使用版本5.1.0。</li>
+<li>之後，使用者會安裝5.0.3，並再次執行應用程式，現在將會使用5.0.3。</li>
+</ol>
+<p>5.0.3 和5.1.0 可能會有不同的行為，特別是針對序列化二進位資料等案例。</p>
+<h3 id="control-roll-forward-behavior" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#control-roll-forward-behavior" aria-labelledby="control-roll-forward-behavior"></a>控制項向前復原行為</h3>
+<p>您可以使用四種不同的方式來設定應用程式的向前復原行為：</p>
+<ol>
+<li><p>藉由設定 <code>&lt;RollForward&gt;</code> 屬性來 Project 層級設定：</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;PropertyGroup&gt;
+  &lt;RollForward&gt;LatestMinor&lt;/RollForward&gt;
+&lt;/PropertyGroup&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">PropertyGroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RollForward</span>&gt;</span>LatestMinor<span class="hljs-tag">&lt;/<span class="hljs-name">RollForward</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">PropertyGroup</span>&gt;</span>
+</span></code></pre>
+</li>
+<li><p><code>*.runtimeconfig.json</code>檔案。</p>
+<p>當您編譯應用程式時，就會產生這個檔案。 <code>&lt;RollForward&gt;</code>如果已在專案中設定屬性，則會在檔案中 <code>*.runtimeconfig.json</code> 重制為 <code>rollForward</code> 設定。 使用者可以編輯此檔案來變更您的應用程式行為。</p>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">JSON</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-json" data-author-content="{
+  &quot;runtimeOptions&quot;: {
+    &quot;tfm&quot;: &quot;net5.0&quot;,
+    &quot;rollForward&quot;: &quot;LatestMinor&quot;,
+    &quot;framework&quot;: {
+      &quot;name&quot;: &quot;Microsoft.NETCore.App&quot;,
+      &quot;version&quot;: &quot;5.0.0&quot;
+    }
+  }
+}
+"><span>{
+  <span class="hljs-attr">"runtimeOptions"</span>: {
+    <span class="hljs-attr">"tfm"</span>: <span class="hljs-string">"net5.0"</span>,
+    <span class="hljs-attr">"rollForward"</span>: <span class="hljs-string">"LatestMinor"</span>,
+    <span class="hljs-attr">"framework"</span>: {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Microsoft.NETCore.App"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"5.0.0"</span>
+    }
+  }
+}
+</span></code></pre>
+</li>
+<li><p><code>dotnet</code>命令的 <code>--roll-forward &lt;value&gt;</code> 屬性。</p>
+<p>當您執行應用程式時，您可以透過命令列來控制向前復原行為：</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">.NET CLI</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-dotnetcli" data-author-content="dotnet run --roll-forward LatestMinor
+dotnet myapp.dll --roll-forward LatestMinor
+myapp.exe --roll-forward LatestMinor
+"><span><span class="hljs-keyword">dotnet</span> <span class="hljs-keyword">run</span><span class="hljs-parameter"> --roll-forward</span> LatestMinor
+<span class="hljs-keyword">dotnet</span> myapp.dll<span class="hljs-parameter"> --roll-forward</span> LatestMinor
+myapp.exe<span class="hljs-parameter"> --roll-forward</span> LatestMinor
+</span></code></pre>
+</li>
+<li><p><code>DOTNET_ROLL_FORWARD</code>環境變數。</p>
+</li>
+</ol>
+<h3 id="precedence" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#precedence" aria-labelledby="precedence"></a>優先順序</h3>
+<p>當您的應用程式執行時，向前復原行為是依下列順序設定，優先順序較低的專案會優先于較低的編號專案：</p>
+<ol>
+<li><code>*.runtimeconfig.json</code>首先會評估設定檔。</li>
+<li>接下來， <code>DOTNET_ROLL_FORWARD</code> 會考慮環境變數，覆寫先前的檢查。</li>
+<li>最後，任何 <code>--roll-forward</code> 傳遞至執行中應用程式的參數都會覆寫其他所有專案。</li>
+</ol>
+<h3 id="values" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#values" aria-labelledby="values"></a>值</h3>
+<p>不過，您可以設定向前復原設定，請使用下列其中一個值來設定行為：</p>
+<div class="has-inner-focus"><table aria-label="值" class="table table-sm">
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Minor</code></td>
+<td>如果未指定，則為<strong>預設值</strong>。<br>如果遺漏要求的次要版本，則向前復原到最低的次要版本。 如果要求的次要版本存在，則會使用該 <code>LatestPatch</code> 原則。</td>
+</tr>
+<tr>
+<td><code>Major</code></td>
+<td>如果遺漏要求的主要版本，則向前復原到下一個可用的較高主要版本，以及最低次要版本。 如果要求的主要版本存在，則會使用該 <code>Minor</code> 原則。</td>
+</tr>
+<tr>
+<td><code>LatestPatch</code></td>
+<td>向前復原到最高的修補程式版本。 此值會停用次要版本向前復原。</td>
+</tr>
+<tr>
+<td><code>LatestMinor</code></td>
+<td>向前復原到最高的次要版本，即使有要求的次要版本存在也一樣。</td>
+</tr>
+<tr>
+<td><code>LatestMajor</code></td>
+<td>向前復原到最高的主要和最高次要版本，即使有要求的主要存在。</td>
+</tr>
+<tr>
+<td><code>Disable</code></td>
+<td>不要向前復原，只系結至指定的版本。 此原則不建議用於一般用途，因為它會停用向前復原到最新修補程式的能力。 只有測試時才建議使用這個值。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="self-contained-deployments-include-the-selected-runtime" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#self-contained-deployments-include-the-selected-runtime" aria-labelledby="self-contained-deployments-include-the-selected-runtime"></a>獨立部署包含選取的執行階段</h2>
+<p>您可以將應用程式發佈為<a href="https://learn.microsoft.com/zh-tw/dotnet/core/deploying/#publish-self-contained" data-linktype="relative-path"><strong>獨立散發</strong></a>。 這種方法會將 .NET 執行時間和程式庫與您的應用程式結合在一起。 獨立部署不會相依於執行階段環境。 執行階段版本選取發生於發佈時，而不是執行時。</p>
+<p>發行時所發生的 <em>還原</em> 事件會選取指定執行時間系列的最新修補程式版本。 例如，如果是 .NET 5 執行時間系列中的最新修補程式版本， <code>dotnet publish</code> 則會選取 .net 5.0.3。 目標 Framework (包括最新安裝的安全性修補程式) 會封裝於應用程式。</p>
+<p>如果未滿足針對應用程式指定的最小版本，就會發生錯誤。 <code>dotnet publish</code> 會繫結至最新的執行階段修補程式版本 (指定的主要.次要版本系列內)。 <code>dotnet publish</code> 不支援 <code>dotnet run</code> 的向前復原語意。 如需修補程式和獨立式部署的詳細資訊，請參閱部署 .NET 應用程式中的 <a href="https://learn.microsoft.com/zh-tw/dotnet/core/deploying/runtime-patch-selection" data-linktype="relative-path">執行時間修補程式選項</a> 。</p>
+<p>獨立部署可能需要特定修補程式版本。 您可以覆寫專案檔中的最低執行階段修補程式版本 (改為較高或較低版本)，如下列範例所示：</p>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;PropertyGroup&gt;
+  &lt;RuntimeFrameworkVersion&gt;5.0.7&lt;/RuntimeFrameworkVersion&gt;
+&lt;/PropertyGroup&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">PropertyGroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RuntimeFrameworkVersion</span>&gt;</span>5.0.7<span class="hljs-tag">&lt;/<span class="hljs-name">RuntimeFrameworkVersion</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">PropertyGroup</span>&gt;</span>
+</span></code></pre>
+<p><code>RuntimeFrameworkVersion</code>元素會覆寫預設的版本原則。 針對獨立部署，<code>RuntimeFrameworkVersion</code> 會指定「確切」<code>RuntimeFrameworkVersion</code>的執行階段架構版本。 針對架構相依應用程式，<code>RuntimeFrameworkVersion</code> 會指定所需的「最低」<code>RuntimeFrameworkVersion</code>執行階段架構版本。</p>
+<h2 id="see-also" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#see-also" aria-labelledby="see-also"></a>另請參閱</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-tw/dotnet/core/install/" data-linktype="relative-path">下載並安裝 .net</a>。</li>
+<li><a href="https://learn.microsoft.com/zh-tw/dotnet/core/install/remove-runtime-sdk-versions" data-linktype="relative-path">如何移除 .Net 執行時間和 SDK</a>。</li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print margin-bottom-md margin-bottom-none-desktop"><!---->
+			<hr class="hr">
+			<h2 class="title is-3 margin-top-sm" id="recommended-content"><!---->建議的內容<!----></h2>
+			
+		<ul id="recommendations-list" aria-live="polite" aria-relevant="additions" aria-labelledby="recommended-content" class="margin-bottom-sm">
+			<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet?source=recommendations" data-bi-name="recommendation-item-0">
+									<h3><!---->dotnet 命令 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->瞭解 dotnet 命令 (.NET CLI 的一般驅動程式) 及其使用方式。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/troubleshoot-usage-issues?source=recommendations" data-bi-name="recommendation-item-1">
+									<h3><!---->針對 .NET 工具使用問題進行疑難排解 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->探索執行 .NET 工具和可能的解決方案時遇到的常見問題。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-sdk-check?source=recommendations" data-bi-name="recommendation-item-2">
+									<h3><!---->dotnet sdk 檢查命令 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->「Dotnet sdk 檢查」命令會告訴您 .NET SDK 和 .NET 執行時間的最新可用版本。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/global-json?source=recommendations" data-bi-name="recommendation-item-3">
+									<h3><!---->global.json 概觀 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->瞭解如何在執行 .NET CLI 命令時，使用 global.json 檔案來設定 .NET SDK 版本。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-tool-install?source=recommendations" data-bi-name="recommendation-item-4">
+									<h3><!---->dotnet tool install 命令 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->dotnet tool install 命令會在您的電腦上安裝指定的 .NET 工具。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/nuget/consume-packages/install-use-packages-dotnet-cli?source=recommendations" data-bi-name="recommendation-item-5">
+									<h3><!---->使用 dotnet CLI 安裝和管理 NuGet 套件<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->使用 dotnet CLI 以便處理 NuGet 套件的指示。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-build?source=recommendations" data-bi-name="recommendation-item-6">
+									<h3><!---->dotnet build 命令 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->dotnet build 命令會建置專案和其所有相依性。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/zh-tw/dotnet/core/tools/dotnet-list-package?source=recommendations" data-bi-name="recommendation-item-7">
+									<h3><!---->dotnet list package 命令 - .NET CLI<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->'dotnet list package' 命令提供一個便利選項，可列出適用於專案或解決方案的套件參考。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+		</ul>
+		
+				<div class="buttons buttons-centered has-background-linethrough">
+					
+		<button aria-expanded="false" data-show-more="" class="button button-sm margin-bottom-none show-more-button" aria-controls="recommendations-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->顯示較多<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	
+				</div>
+		  
+	
+		<!----></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden=""></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden=""></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://learn.microsoft.com/zh-tw/locale?target=https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" data-bi-name="select-locale" aria-label="內容語言選取器。 目前設定為中文 (繁體)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (繁體)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="佈景主題" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>佈景主題</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+淺色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+深色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+高對比					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/previous-versions/" data-bi-name="archivelink">舊版本</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">部落格</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/contribute/" data-bi-name="contributorGuide">參與</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隱私權與 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/legal/termsofuse" data-bi-name="termsofuse">使用規定</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商標</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="頁面動作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden=""></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden=""></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大綱"><!---->
+		<article class="border border-radius-lg overflow-hidden ">
+			<div class="padding-block-xxs padding-inline-xs font-weight-semibold border-bottom font-size-md display-flex align-items-center background-color-body-medium">
+		<span class="icon margin-right-xxs">
+		<span class="docon docon-bulleted-list-three-items"></span>
+	</span><span><!---->本文內容<!----></span>
+	</div> 
+		<ul id="right-rail-in-this-article-list" aria-live="polite" aria-relevant="additions" class="padding-xxs">
+			<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#the-sdk-uses-the-latest-installed-version"><!---->SDK 使用最新安裝的版本<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis"><!---->目標 Framework Moniker 定義建置時間 API<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#framework-dependent-apps-roll-forward"><!---->與 Framework 相依的應用程式向前復原<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#self-contained-deployments-include-the-selected-runtime"><!---->獨立部署包含選取的執行階段<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#see-also"><!---->另請參閱<!----></a>
+					</li>
+				<!---->
+		</ul>
+	 <div class="border-top"><!---->
+		<button aria-expanded="false" data-show-more="" class="button button-clear button-block has-inner-focus" aria-controls="right-rail-in-this-article-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->顯示較多<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	<!----></div>
+		</article>
+	<!----></nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://learn.microsoft.com/zh-tw/locale?target=https://learn.microsoft.com/zh-tw/dotnet/core/versions/selection#target-framework-monikers-define-build-time-apis" data-bi-name="select-locale" aria-label="內容語言選取器。 目前設定為中文 (繁體)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (繁體)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="佈景主題" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>佈景主題</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+淺色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+深色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+高對比					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/previous-versions/" data-bi-name="archivelink">舊版本</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">部落格</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/contribute/" data-bi-name="contributorGuide">參與</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隱私權與 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/zh-tw/legal/termsofuse" data-bi-name="termsofuse">使用規定</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商標</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+		<script src="./選取要使用的 .NET 版本 - .NET _ Microsoft Learn(zh-tw)_files/MathJax.js.下載" integrity="sha384-RLsAi7wiVvnmHrRjlVvUjU45C0bfsIBg6Gsxue6azjJi+lA5q5uK+XbGzO3yn5g1" crossorigin="anonymous"></script>
+	<div id="action-panel" role="region" aria-label="動作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>
